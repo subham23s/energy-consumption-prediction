@@ -33,7 +33,8 @@ This project trains an ANN on the **UCI Energy Efficiency Dataset** to predict h
 ```
 energy-consumption-prediction/
 │
-├── ENB2012_data.xlsx       # UCI Energy Efficiency Dataset
+├──data/
+    |-- ENB2012_data.xlsx       # UCI Energy Efficiency Dataset
 ├── train_model.py          # Train ANN and save model
 ├── dashboard.py            # Streamlit live dashboard
 ├── .gitignore

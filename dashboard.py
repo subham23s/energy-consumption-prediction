@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 import pandas as pd
 import matplotlib.pyplot as plt
-from tensorflow.keras.models import load_model
+from tensorflow import keras
 
 # ─────────────────────────────────────────
 # Page Config
@@ -19,7 +19,7 @@ st.set_page_config(
 # ─────────────────────────────────────────
 @st.cache_resource
 def load_resources():
-    model = load_model("energy_model.keras")
+    model = keras.models.load_model("energy_model.keras")
     scaler = pickle.load(open("scaler.pkl", "rb"))
     return model, scaler
 

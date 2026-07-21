@@ -13,7 +13,7 @@ from tensorflow.keras.callbacks import EarlyStopping
 # STEP 1 — Load Dataset
 # ─────────────────────────────────────────
 print("Loading dataset...")
-df = pd.read_excel("D:\\Energy_Prediction\\ENB2012_data.xlsx")
+df = pd.read_excel("D:\Energy_Prediction\data\ENB2012_data.xlsx")
 print(f"Dataset shape: {df.shape}")
 print(df.head())
 
@@ -49,12 +49,12 @@ print(f"Testing samples:  {X_test.shape[0]}")
 # STEP 5 — Build ANN Model
 # ─────────────────────────────────────────
 model = Sequential()
-model.add(Dense(64, activation='relu', input_shape=(8,)))  # Input + Hidden Layer 1
-model.add(Dropout(0.2))                                     # Prevent overfitting
-model.add(Dense(32, activation='relu'))                     # Hidden Layer 2
+model.add(Dense(64, activation='relu', input_shape=(8,)))
 model.add(Dropout(0.2))
-model.add(Dense(16, activation='relu'))                     # Hidden Layer 3
-model.add(Dense(1))                                          # Output Layer (regression)
+model.add(Dense(32, activation='relu'))
+model.add(Dropout(0.2))
+model.add(Dense(16, activation='relu'))
+model.add(Dense(1))
 
 model.compile(optimizer='adam', loss='mse', metrics=['mae'])
 model.summary()
